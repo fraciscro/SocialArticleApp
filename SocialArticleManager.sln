@@ -3,12 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4208D8A6-FA48-4627-A00A-A88E966B3F5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SocialArticleManager.Api", "SocialArticleManager.Api", "{C1285C17-C04F-470E-8CFA-386572290751}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialArticleManager.Api", "src\SocialArticleManager.Api\SocialArticleManager.Api.csproj", "{0182C8C7-3E16-4DED-B340-0ACA3F796D4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0182C8C7-3E16-4DED-B340-0ACA3F796D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0182C8C7-3E16-4DED-B340-0ACA3F796D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0182C8C7-3E16-4DED-B340-0ACA3F796D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0182C8C7-3E16-4DED-B340-0ACA3F796D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1285C17-C04F-470E-8CFA-386572290751} = {4208D8A6-FA48-4627-A00A-A88E966B3F5E}
+		{0182C8C7-3E16-4DED-B340-0ACA3F796D4B} = {C1285C17-C04F-470E-8CFA-386572290751}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A936F15F-DAD3-4906-A7DC-09A977F077D2}
 	EndGlobalSection
 EndGlobal
