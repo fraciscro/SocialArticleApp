@@ -22,7 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\" />
+    <Folder Include="Application\Article\NewFolder\" />
+    <Folder Include="Application\Common\" />
+    <Folder Include="Application\Organization\" />
     <Folder Include="Domain\Aggregates\OrganizationAggregate\Enums\" />
   </ItemGroup>
 

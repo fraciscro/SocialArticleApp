@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using SocialArticleManager.Api.Domain.Aggregates.OrganizationAggregate;
+﻿using SocialArticleManager.Api.Domain.Aggregates.OrganizationAggregate;
 using SocialArticleManager.Api.Infrastructure.Persistence;
 
 namespace SocialArticleManager.Api.Controllers
