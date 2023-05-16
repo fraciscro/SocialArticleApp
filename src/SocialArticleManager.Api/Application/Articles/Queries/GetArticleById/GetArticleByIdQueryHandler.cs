@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using SocialArticleManager.Api.Application.Articles.Models;
+using SocialArticleManager.Api.Application.Articles.Queries.Models;
 using SocialArticleManager.Api.Domain.Aggregates.ArticleAggregate.Repository;
 using SocialArticleManager.Api.Domain.Aggregates.ArticleAggregate.ValueObjects;
 using SocialArticleManager.Api.Domain.Aggregates.OrganizationAggregate.Repository;

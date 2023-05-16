@@ -1,4 +1,4 @@
-﻿namespace SocialArticleManager.Api.Application.Articles.Models
+﻿namespace SocialArticleManager.Api.Application.Articles.Queries.Models
 {
     public record ArticleModel
     (
