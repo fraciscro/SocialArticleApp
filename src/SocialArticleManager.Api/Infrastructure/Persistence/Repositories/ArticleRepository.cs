@@ -36,6 +36,11 @@ namespace SocialArticleManager.Api.Infrastructure.Persistence.Repositories
             return await _context.Articles.AsNoTracking().Where(a => a.Id == id).FirstOrDefaultAsync();
         }
 
+        public async Task<List<Article>> GetByIdsAsync(List<ArticleId> ids)
+        {
+            return await _context.Articles.AsNoTracking().Where(a => ids.Contains(a.Id)).ToListAsync();
+        }
+
         public async Task<Article> Update(Article entity)
         {
           _context.Articles.Update(entity);

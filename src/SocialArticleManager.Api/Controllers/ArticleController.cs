@@ -3,6 +3,8 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SocialArticleManager.Api.Application.Articles.Commands.CreateArticle;
+using SocialArticleManager.Api.Application.Articles.Queries.GetArticleById;
+using SocialArticleManager.Api.Application.Articles.Queries.ListAllArticles;
 using SocialArticleManager.Api.Contratcs.Article.Requests;
 using SocialArticleManager.Api.Contratcs.Article.Responses;
 
@@ -25,6 +27,20 @@ namespace SocialArticleManager.Api.Controllers
             var command= _mapper.Map<CreateArticleCommand>(createArticleRequest);
             var article= await _mediator.Send(command);
             return Ok(_mapper.Map<ArticleResponse>(article));
+        }
+        [HttpGet("id")]
+        public async Task<IActionResult> GetById(string id)
+        {
+            var query = _mapper.Map<GetArticleByIdQuery>(id);
+            var article = await _mediator.Send(query);
+            return Ok(article);
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var query = new ListAllArticlesQuery();
+            var articles = await _mediator.Send(query);
+            return Ok(articles);
         }
     }
 }

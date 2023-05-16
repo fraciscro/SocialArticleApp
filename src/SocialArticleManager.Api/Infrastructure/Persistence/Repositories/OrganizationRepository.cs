@@ -2,6 +2,7 @@
 using SocialArticleManager.Api.Domain.Aggregates.OrganizationAggregate;
 using SocialArticleManager.Api.Domain.Aggregates.OrganizationAggregate.Repository;
 using SocialArticleManager.Api.Domain.Aggregates.OrganizationAggregate.ValueObjects;
+using System.Linq;
 
 namespace SocialArticleManager.Api.Infrastructure.Persistence.Repositories
 {
@@ -36,6 +37,11 @@ namespace SocialArticleManager.Api.Infrastructure.Persistence.Repositories
         public async Task<Organization> GetByIdAsync(OrganizationId id)
         {
             return await _context.Organizations.AsNoTracking().Where(o => o.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Organization>> GetByIdsAsync(List<OrganizationId> ids)
+        {
+            return await _context.Organizations.AsNoTracking().Where(a => ids.Contains(a.Id)).ToListAsync();
         }
 
         public async Task<Organization> Update(Organization entity)
