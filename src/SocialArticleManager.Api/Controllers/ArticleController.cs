@@ -3,10 +3,13 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SocialArticleManager.Api.Application.Articles.Commands.CreateArticle;
+using SocialArticleManager.Api.Application.Articles.Models;
 using SocialArticleManager.Api.Application.Articles.Queries.GetArticleById;
 using SocialArticleManager.Api.Application.Articles.Queries.ListAllArticles;
 using SocialArticleManager.Api.Contratcs.Article.Requests;
 using SocialArticleManager.Api.Contratcs.Article.Responses;
+using Swashbuckle.AspNetCore.Annotations;
+using System.Net;
 
 namespace SocialArticleManager.Api.Controllers
 {
@@ -14,28 +17,31 @@ namespace SocialArticleManager.Api.Controllers
     [ApiController]
     public class ArticleController : ControllerBase
     {
-        private readonly IMapper _mapper;
         private IMediator _mediator;
-        public ArticleController(IMediator mediator, IMapper mapper)
+        public ArticleController(IMediator mediator)
         {
             _mediator = mediator;
-            _mapper = mapper;
         }
         [HttpPost]
-        public async Task<IActionResult> Create(CreateArticleRequest createArticleRequest)
+        [SwaggerOperation(Summary = "Creates article")]
+        [SwaggerResponse(200)]
+        public async Task<IActionResult> Create(CreateArticleCommand createArticleCommand)
         {
-            var command= _mapper.Map<CreateArticleCommand>(createArticleRequest);
-            var article= await _mediator.Send(command);
-            return Ok(_mapper.Map<ArticleResponse>(article));
+            await _mediator.Send(createArticleCommand);
+            return Ok();
         }
-        [HttpGet("id")]
+        [HttpGet("{id}")]
+        [SwaggerOperation(Summary = "Gets article by id")]
+        [SwaggerResponse(200)]
         public async Task<IActionResult> GetById(string id)
         {
-            var query = _mapper.Map<GetArticleByIdQuery>(id);
+            var query = new GetArticleByIdQuery(id);
             var article = await _mediator.Send(query);
             return Ok(article);
         }
         [HttpGet]
+        [SwaggerOperation(Summary = "Gets All Articles")]
+        [SwaggerResponse(200)]
         public async Task<IActionResult> GetAll()
         {
             var query = new ListAllArticlesQuery();

@@ -2,6 +2,7 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import { Layout } from './common/layout/layout'
+import { ArticlePage } from './pages/articles/articles'
 
 function App() {
 
@@ -14,13 +15,13 @@ function App() {
                     <Layout />
                 }
               >
-                {/* <Route
-                  path="/company"
+                <Route
+                  path="/"
                   element={
-                      <CompanyPage />
+                      <ArticlePage />
                   }
                 />
-                </Route> */}</Route>
+                </Route>
             </Routes>
     </>
   )

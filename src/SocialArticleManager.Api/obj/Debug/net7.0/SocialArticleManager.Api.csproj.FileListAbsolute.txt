@@ -155,3 +155,4 @@ C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.
 C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.dll
 C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.Core.dll
 C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.DependencyInjection.dll
+C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll

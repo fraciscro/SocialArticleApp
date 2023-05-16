@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SocialArticleManager.Api.Domain.Common.Models
 {
-    public abstract class Entity<TId>:IHasDomainEvents
+    public abstract class Entity<TId>:Audit,IHasDomainEvents
     {
         public TId Id { get; protected set; }
 

@@ -1,5 +1,6 @@
-﻿using MediatR;
-using SocialArticleManager.Api.Application.Articles.Queries.Models;
+﻿using MapsterMapper;
+using MediatR;
+using SocialArticleManager.Api.Application.Articles.Models;
 using SocialArticleManager.Api.Domain.Aggregates.ArticleAggregate;
 using SocialArticleManager.Api.Domain.Aggregates.ArticleAggregate.Repository;
 using SocialArticleManager.Api.Domain.Aggregates.ArticleAggregate.ValueObjects;
@@ -13,10 +14,13 @@ namespace SocialArticleManager.Api.Application.Articles.Queries.ListAllArticles
     {
         private readonly IArticleRepository _articleRepository;
         private readonly IOrganizationRepository _organizationRepository;
-        public ListAllArticlesQueryHandler(IArticleRepository articleRepository, IOrganizationRepository organizationRepository)
+        private readonly IMapper _mapper;
+        public ListAllArticlesQueryHandler(IArticleRepository articleRepository, IOrganizationRepository organizationRepository,IMapper mapper)
         {
             _articleRepository = articleRepository;
             _organizationRepository = organizationRepository;
+            _mapper = mapper;
+                
         }
         public async Task<List<ArticleModel>> Handle(ListAllArticlesQuery request, CancellationToken cancellationToken)
         {
@@ -26,7 +30,7 @@ namespace SocialArticleManager.Api.Application.Articles.Queries.ListAllArticles
             foreach (var article in currentArticles)
             {
                 var organization = organizations.Where(o => o.Id.Value == article.OrganizationId.Value).FirstOrDefault();
-                var currentArticle = new ArticleModel(article.Id.Value.ToString(), article.Title, article.Content, new Author(organization.Name));
+                var currentArticle =_mapper.Map<ArticleModel>((article,organization));
                 articles.Add(currentArticle);
             }
             return articles;

@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using SocialArticleManager.Api.Application.Articles.Queries.Models;
+using SocialArticleManager.Api.Application.Articles.Models;
 
 namespace SocialArticleManager.Api.Application.Articles.Queries.ListAllArticles
 {

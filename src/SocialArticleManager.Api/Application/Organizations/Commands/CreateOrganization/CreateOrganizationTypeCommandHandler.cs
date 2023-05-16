@@ -5,7 +5,7 @@ using SocialArticleManager.Api.Domain.Aggregates.OrganizationAggregate.Repositor
 
 namespace SocialArticleManager.Api.Application.Organizations.Commands.CreateOrganization
 {
-    public class CreateOrganizationTypeCommandHandler : IRequestHandler<CreateOrganizationCommand, Organization>
+    public class CreateOrganizationTypeCommandHandler : IRequestHandler<CreateOrganizationCommand>
     {
         private readonly IOrganizationRepository _organizationRepository;
         public CreateOrganizationTypeCommandHandler(IOrganizationRepository organizationRepository)
@@ -13,11 +13,10 @@ namespace SocialArticleManager.Api.Application.Organizations.Commands.CreateOrga
             _organizationRepository = organizationRepository;
             
         }
-        public async Task<Organization> Handle(CreateOrganizationCommand request, CancellationToken cancellationToken)
+        public async Task Handle(CreateOrganizationCommand request, CancellationToken cancellationToken)
         {
             var organization = Organization.Create(request.Name, request.Url, request.OrganizationType);
             await _organizationRepository.AddAsync(organization);
-            return organization;
         }
     }
 }

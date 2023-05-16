@@ -7,6 +7,6 @@ namespace SocialArticleManager.Api.Application.Articles.Commands.CreateArticle
         (
          string Title,
          string Content,
-         Guid OrganizationId        
-        ):IRequest<Article>;
+         string OrganizationId        
+        ):IRequest;
 }

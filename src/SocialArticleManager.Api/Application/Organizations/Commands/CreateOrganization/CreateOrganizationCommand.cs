@@ -8,7 +8,7 @@ namespace SocialArticleManager.Api.Application.Organizations.Commands.CreateOrga
         string Name,
         string Url,
         OrganizationType OrganizationType
-        ) : IRequest<Organization>;
+        ) : IRequest;
         
 
 }
