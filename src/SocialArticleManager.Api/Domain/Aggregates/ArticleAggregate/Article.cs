@@ -1,4 +1,5 @@
-﻿using SocialArticleManager.Api.Domain.Aggregates.ArticleAggregate.ValueObjects;
+﻿using SocialArticleManager.Api.Domain.Aggregates.ArticleAggregate.Events;
+using SocialArticleManager.Api.Domain.Aggregates.ArticleAggregate.ValueObjects;
 using SocialArticleManager.Api.Domain.Aggregates.OrganizationAggregate.ValueObjects;
 using SocialArticleManager.Api.Domain.Common.Models;
 
@@ -18,7 +19,9 @@ namespace SocialArticleManager.Api.Domain.Aggregates.ArticleAggregate
         }
         public static Article Create(string title, string content, OrganizationId organizationId)
         {
-            return new Article(title, content, organizationId);
+           var article= new Article(title, content, organizationId);
+           article.AddDomainEvent(new ArticleCreated(article,organizationId));
+           return article;
 
         }
         private Article()

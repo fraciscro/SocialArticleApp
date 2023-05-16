@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using SocialArticleManager.Api.Domain.Aggregates.OrganizationAggregate;
-using SocialArticleManager.Api.Domain.Aggregates.OrganizationAggregate.Enums;
-using SocialArticleManager.Api.Infrastructure.Persistence;
+﻿using MapsterMapper;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using SocialArticleManager.Api.Application.Organizations.Commands.CreateOrganization;
+using SocialArticleManager.Api.Application.Organizations.Queries.ListAllOrganizations;
+using SocialArticleManager.Api.Contratcs.Organization.Requests;
+using SocialArticleManager.Api.Contratcs.Organization.Responses;
 
 namespace SocialArticleManager.Api.Controllers
 {
@@ -10,25 +12,27 @@ namespace SocialArticleManager.Api.Controllers
     [ApiController]
     public class OrganizationController : ControllerBase
     {
-        private SocialArticleManagerContext _context;
-        public OrganizationController(SocialArticleManagerContext context)
+        private readonly IMapper _mapper;
+        private IMediator _mediator;
+        public OrganizationController(IMediator mediator,IMapper mapper)
         {
-            _context = context;
+            _mediator = mediator;
+            _mapper = mapper;
 
         }
         [HttpPost]
-        public async Task<IActionResult> Create(string name, string url,OrganizationType type)
+        public async Task<IActionResult> Create(CreateOrganizationRequest createOrganizationRequest)
         {
-            var organization= Organization.Create(name, url, type);
-            await _context.Organizations.AddAsync(organization);
-            await _context.SaveChangesAsync();
-            return Ok(organization);
+            var query=_mapper.Map<CreateOrganizationCommand>(createOrganizationRequest);
+            var organization= await _mediator.Send(query);
+            return Ok(_mapper.Map<OrganizationResponse>(organization));
         }
         [HttpGet]
         public async Task<IActionResult> GetAllOrganizations()
         {
-            var organizations = await _context.Organizations.ToListAsync();
-            return Ok(organizations);
+            var query = new ListAllOrganizationsQuery();
+            var organizations = await _mediator.Send(query);
+            return Ok(_mapper.Map<List<OrganizationResponse>>(organizations));
         }
     }
 }

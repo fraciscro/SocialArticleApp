@@ -150,3 +150,8 @@ C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.
 C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\obj\Debug\net7.0\SocialArticleManager.Api.csproj.CopyComplete
 C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\obj\Debug\net7.0\SocialArticleManager.Api.genruntimeconfig.cache
 C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\obj\Debug\net7.0\ref\SocialArticleManager.Api.dll
+C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\MediatR.dll
+C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\MediatR.Contracts.dll
+C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.dll
+C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.Core.dll
+C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.DependencyInjection.dll

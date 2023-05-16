@@ -4,12 +4,12 @@ namespace SocialArticleManager.Api.Domain.Aggregates.ArticleAggregate.ValueObjec
 {
     public sealed class ArticleId:ValueObject
     {
-        public int Value { get; private set; }
-        private ArticleId(int value)
+        public Guid Value { get; private set; }
+        private ArticleId(Guid value)
         {
             Value = value;
         }
-        public static ArticleId Create(int value)
+        public static ArticleId Create(Guid value)
         {
             return new ArticleId(value);
         }
