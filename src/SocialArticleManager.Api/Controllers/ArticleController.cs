@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using SocialArticleManager.Api.Application.Articles.Commands.CreateArticle;
 using SocialArticleManager.Api.Application.Articles.Models;
 using SocialArticleManager.Api.Application.Articles.Queries.GetArticleById;
+using SocialArticleManager.Api.Application.Articles.Queries.GetArticlesByTerm;
 using SocialArticleManager.Api.Application.Articles.Queries.ListAllArticles;
 using SocialArticleManager.Api.Contratcs.Article.Requests;
 using SocialArticleManager.Api.Contratcs.Article.Responses;
@@ -45,6 +46,15 @@ namespace SocialArticleManager.Api.Controllers
         public async Task<IActionResult> GetAll()
         {
             var query = new ListAllArticlesQuery();
+            var articles = await _mediator.Send(query);
+            return Ok(articles);
+        }
+        [HttpGet("Search")]
+        [SwaggerOperation(Summary = "Gets Articles by term")]
+        [SwaggerResponse(200)]
+        public async Task<IActionResult> GetArticlesByTerm(string term)
+        {
+            var query = new GetArticlesByTermQuery(term);
             var articles = await _mediator.Send(query);
             return Ok(articles);
         }

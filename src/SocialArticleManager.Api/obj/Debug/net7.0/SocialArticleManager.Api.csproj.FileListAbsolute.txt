@@ -168,3 +168,9 @@ F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Microsoft
 F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Elastic.Clients.Elasticsearch.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Elastic.Transport.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Elasticsearch.Net.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Nest.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Azure.Search.Documents.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Microsoft.Extensions.Azure.dll
