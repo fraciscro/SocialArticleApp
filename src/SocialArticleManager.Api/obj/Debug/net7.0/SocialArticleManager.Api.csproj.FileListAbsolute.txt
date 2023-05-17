@@ -156,3 +156,15 @@ C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.
 C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.Core.dll
 C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.DependencyInjection.dll
 C:\Users\Joel Ferreira\Documents\apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.Core.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Mapster.DependencyInjection.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\MediatR.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\MediatR.Contracts.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+F:\Apps\SocialArticleApp\src\SocialArticleManager.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll

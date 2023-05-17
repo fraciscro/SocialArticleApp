@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joel Ferreira\\Documents\\apps\\SocialArticleApp\\src\\SocialArticleManager.Api\\SocialArticleManager.Api.csproj": {}
+    "F:\\Apps\\SocialArticleApp\\src\\SocialArticleManager.Api\\SocialArticleManager.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joel Ferreira\\Documents\\apps\\SocialArticleApp\\src\\SocialArticleManager.Api\\SocialArticleManager.Api.csproj": {
+    "F:\\Apps\\SocialArticleApp\\src\\SocialArticleManager.Api\\SocialArticleManager.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joel Ferreira\\Documents\\apps\\SocialArticleApp\\src\\SocialArticleManager.Api\\SocialArticleManager.Api.csproj",
+        "projectUniqueName": "F:\\Apps\\SocialArticleApp\\src\\SocialArticleManager.Api\\SocialArticleManager.Api.csproj",
         "projectName": "SocialArticleManager.Api",
-        "projectPath": "C:\\Users\\Joel Ferreira\\Documents\\apps\\SocialArticleApp\\src\\SocialArticleManager.Api\\SocialArticleManager.Api.csproj",
-        "packagesPath": "C:\\Users\\Joel Ferreira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joel Ferreira\\Documents\\apps\\SocialArticleApp\\src\\SocialArticleManager.Api\\obj\\",
+        "projectPath": "F:\\Apps\\SocialArticleApp\\src\\SocialArticleManager.Api\\SocialArticleManager.Api.csproj",
+        "packagesPath": "C:\\Users\\j1419\\.nuget\\packages\\",
+        "outputPath": "F:\\Apps\\SocialArticleApp\\src\\SocialArticleManager.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Joel Ferreira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\j1419\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -108,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
