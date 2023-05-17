@@ -20,7 +20,6 @@ namespace SocialArticleManager.Api.Application.Articles.Commands.CreateArticle
         {
             var article= Article.Create(request.Title, request.Content,OrganizationId.Create( Guid.Parse(request.OrganizationId)));
             await _articleRepository.AddAsync(article);
-            var articleAddedIntegrationEvent = new ArticleAddedIntegrationEvent(article);
             await _mediator.Publish(new ArticleAddedIntegrationEvent(article));
         }
     }

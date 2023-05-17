@@ -62,7 +62,6 @@ namespace SocialArticleManager.Api.Infrastructure.ElasticSearch.Article
             var searchResults = await _searchClient.SearchAsync<ArticleSearchModel>(searchText, searchOptions);
             var articles = searchResults.Value.GetResults().Select(d => d.Document).ToList();
             var articlesResult= articles.ConvertAll(a=> new ArticleModel(a.Id,a.Title,a.Content,new Author(a.Author)));
-            // Iterate over the search results and do something with each Post object
             return articlesResult;
         }
     }
