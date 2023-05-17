@@ -1,15 +1,14 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import { Navbar } from './navbar'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { Navbar } from "./navbar";
 
 export const Layout = () => {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <div className="container-fluid">
-                        <Outlet />
-      </div>  
-   
+        <Outlet />
+      </div>
     </>
-  )
-}
+  );
+};
