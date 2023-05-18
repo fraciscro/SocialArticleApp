@@ -1,6 +1,13 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
+  const [term, setTerm] = useState<string>("");
+  const navigate = useNavigate();
+  function searchTerm(event: any) {
+    event.preventDefault();
+    navigate(`search?term=${term}`);
+  }
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-white bg-white shadow-sm">
@@ -22,9 +29,13 @@ export const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="nav navbar-nav mx-auto">
               <li className="nav-item">
-                <form className="d-flex justify-content-center ">
+                <form onSubmit={searchTerm}>
                   <input
-                    className="form-control me-2"
+                    value={term}
+                    id="term"
+                    onChange={(event) => setTerm(event.target.value)}
+                    name="term"
+                    className="form-control me-2 rounded-4"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
