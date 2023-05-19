@@ -1,8 +1,9 @@
 ﻿using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SocialArticleManager.Api.Application.Organizations.Commands.CreateOrganization;
-using SocialArticleManager.Api.Application.Organizations.Queries.ListAllOrganizations;
+using SocialArticleManager.Application.Organizations.Commands.CreateOrganization;
+using SocialArticleManager.Application.Organizations.Queries.ListAllOrganizations;
+
 namespace SocialArticleManager.Api.Controllers
 {
     [Route("api/[controller]")]

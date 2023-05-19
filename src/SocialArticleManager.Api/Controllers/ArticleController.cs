@@ -2,13 +2,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SocialArticleManager.Api.Application.Articles.Commands.CreateArticle;
-using SocialArticleManager.Api.Application.Articles.Models;
-using SocialArticleManager.Api.Application.Articles.Queries.GetArticleById;
-using SocialArticleManager.Api.Application.Articles.Queries.GetArticlesByTerm;
-using SocialArticleManager.Api.Application.Articles.Queries.ListAllArticles;
-using SocialArticleManager.Api.Contratcs.Article.Requests;
-using SocialArticleManager.Api.Contratcs.Article.Responses;
+using SocialArticleManager.Application.Articles.Commands.CreateArticle;
+using SocialArticleManager.Application.Articles.Queries.GetArticleById;
+using SocialArticleManager.Application.Articles.Queries.GetArticlesByTerm;
+using SocialArticleManager.Application.Articles.Queries.ListAllArticles;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 

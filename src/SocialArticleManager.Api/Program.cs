@@ -1,7 +1,7 @@
 using Mapster;
 using MapsterMapper;
-using SocialArticleManager.Api.Application;
-using SocialArticleManager.Api.Infrastructure;
+using SocialArticleManager.Application;
+using SocialArticleManager.Infrastructure;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
