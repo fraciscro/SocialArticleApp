@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../../config/firebase";
+import { signOut } from "firebase/auth";
 
 export const Navbar = () => {
   const [term, setTerm] = useState<string>("");
@@ -8,6 +10,13 @@ export const Navbar = () => {
     event.preventDefault();
     navigate(`search?term=${term}`);
   }
+
+  const signOutWithGoogle = async () => {
+    const result = await signOut(auth);
+    console.log(result);
+    navigate("/");
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-white bg-white shadow-sm">
@@ -61,17 +70,40 @@ export const Navbar = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <i className="fa-regular fa-user"></i>
+                  {auth.currentUser ? (
+                    <img
+                      src={
+                        auth.currentUser?.photoURL ||
+                        "https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png"
+                      }
+                      className="img-fluid profile-image-pic img-thumbnail rounded-circle"
+                      width="30px"
+                      alt="profile"
+                    />
+                  ) : (
+                    <i className="fa-regular fa-user"></i>
+                  )}
                 </button>
                 <ul
                   className="dropdown-menu "
                   aria-labelledby="dropdownMenuButton1"
                 >
-                  <li>
-                    <Link className="dropdown-item" to="/login">
-                      Login
-                    </Link>
-                  </li>
+                  {auth.currentUser ? (
+                    <li>
+                      <button
+                        className="dropdown-item"
+                        onClick={signOutWithGoogle}
+                      >
+                        Log out
+                      </button>
+                    </li>
+                  ) : (
+                    <li>
+                      <Link className="dropdown-item" to="/login">
+                        Login
+                      </Link>
+                    </li>
+                  )}
                 </ul>
               </li>
             </ul>

@@ -1,7 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { auth, provider } from "../../config/firebase";
+import { signInWithPopup } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const signInWithGoogle = async () => {
+    const result = await signInWithPopup(auth, provider);
+    console.log(result);
+    navigate("/welcome");
+  };
+
   return (
     <>
       <div className="container">
@@ -35,19 +46,49 @@ export const LoginPage = () => {
                   />
                 </div>
                 <div className="text-center">
-                  <button
-                    type="submit"
-                    className="btn btn-color px-5 mb-5 w-100"
-                  >
+                  <button type="submit" className="btn btn-secondary">
                     Login
                   </button>
                 </div>
+                <hr className="hr" />
                 <div
                   id="emailHelp"
                   className="form-text text-center mb-5 text-dark"
                 >
                   Not Registered?{" "}
                   <Link to={"/register"}> Create an Account </Link>
+                </div>
+
+                <div className="text-center mb-3">
+                  <p>or sign in with:</p>
+                  <button
+                    type="button"
+                    className="btn btn-link btn-floating mx-1"
+                  >
+                    <i className="fab fa-facebook-f"></i>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn btn-link btn-floating mx-1"
+                    onClick={signInWithGoogle}
+                  >
+                    <i className="fab fa-google"></i>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn btn-link btn-floating mx-1"
+                  >
+                    <i className="fab fa-twitter"></i>
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn btn-link btn-floating mx-1"
+                  >
+                    <i className="fab fa-github"></i>
+                  </button>
                 </div>
               </form>
             </div>
